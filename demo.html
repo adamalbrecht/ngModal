@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-ng-app='ngModalDemo'>
+  <head>
+    <title>ngQuickDate Demo</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/ng-modal.css" media="all" />
+    <style type='text/css'>
+      body{font-family:'Helvetica Neue',Helvetica,sans-serif}
+    </style>
+  </head>
+  <body>
+    <div ng-controller='DemoController'>
+      <modal-dialog show-on='modalShown'>
+        <h1>My Modal Content</h1>
+      </modal-dialog>
+      <button ng-click='toggleModal()'>Toggle Modal</button>
+      <br/>
+      <br/>
+      <br/>
+      <p>Shown? {{modalShown}}</p>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script type="text/javascript" src="build/ng-modal.js"></script>
+    <script type='text/javascript'>
+      app = angular.module('ngModalDemo', ['ngModal']);
+      app.config(function(ngModalDefaultsProvider) {
+          return ngModalDefaultsProvider.set({
+            closeButtonHtml: "<i class='fa fa-times'></i>"
+          });
+      });
+      app.controller('DemoController', function($scope) {
+          $scope.modalShown = false;
+          $scope.toggleModal = function() {
+            $scope.modalShown = !$scope.modalShown;
+          };
+      });
+    </script>
+  </body>
+</html>
