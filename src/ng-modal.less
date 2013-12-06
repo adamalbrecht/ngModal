@@ -26,9 +26,11 @@
   -moz-box-shadow: 4px 4px 80px #000;
   -ms-box-shadow: 4px 4px 80px #000;
   -o-box-shadow: 4px 4px 80px #000;
+  padding: 10px;
 }
 .ng-modal-dialog-content {
-  padding:10px;
+  overflow: hidden;
+  height: 100%;
 }
 .ng-modal-close {
   position: absolute;
@@ -42,4 +44,12 @@
 .ng-modal-close-x {
   font-weight: bold;
   font-family: Arial, sans-serif;
+}
+.ng-modal-title {
+  font-weight: bold;
+  font-size: 200%;
+  display: block;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: solid 1px #999;
 }

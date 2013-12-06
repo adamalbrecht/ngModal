@@ -27,7 +27,8 @@ app.provider "ngModalDefaults", ->
 app.directive 'modalDialog', ['ngModalDefaults', (ngModalDefaults) ->
   restrict: 'E'
   scope:
-    showOn: '='
+    show: '='
+    title: '@'
   replace: true
   transclude: true
   link: (scope, element, attrs) ->
@@ -40,15 +41,23 @@ app.directive 'modalDialog', ['ngModalDefaults', (ngModalDefaults) ->
       scope.dialogStyle['height'] = attrs.height if attrs.height
 
     scope.hideModal = ->
-      scope.showOn = false
+      scope.show = false
+
+    scope.$watch('show', (newVal, oldVal) ->
+      if newVal && !oldVal
+        document.getElementsByTagName("body")[0].style.overflow = "hidden";
+      else
+        document.getElementsByTagName("body")[0].style.overflow = "";
+    )
 
     setupCloseButton()
     setupStyle()
 
   template: """
-              <div class='ng-modal' ng-show='showOn'>
+              <div class='ng-modal' ng-show='show'>
                 <div class='ng-modal-overlay' ng-click='hideModal()'></div>
                 <div class='ng-modal-dialog' ng-style='dialogStyle'>
+                  <span class='ng-modal-title' ng-bind='title'></span>
                   <div class='ng-modal-close' ng-click='hideModal()'>
                     <div ng-bind-html-unsafe='closeButtonHtml'></div>
                   </div>

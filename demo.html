@@ -12,14 +12,17 @@
   </head>
   <body>
     <div ng-controller='DemoController'>
-      <modal-dialog show-on='modalShown' width='500px' height='90%'>
-        <h1>My Modal Content</h1>
+      <modal-dialog show='modalShown' width='500px' height='90%' title='This is a modal'>
+        <a href='{{link}}'>This is a link to {{link}}</a>
       </modal-dialog>
       <button ng-click='toggleModal()'>Toggle Modal</button>
       <br/>
       <br/>
       <br/>
       <p>Shown? {{modalShown}}</p>
+      <div style='height:3000px; padding: 10px; margin: 20px; border: solid 1px red;'>
+        This is a really tall div!
+      </div>
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script type="text/javascript" src="build/ng-modal.js"></script>
@@ -31,6 +34,7 @@
           });
       });
       app.controller('DemoController', function($scope) {
+          $scope.link = "http://google.com";
           $scope.modalShown = false;
           $scope.toggleModal = function() {
             $scope.modalShown = !$scope.modalShown;
