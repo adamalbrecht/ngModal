@@ -31,20 +31,28 @@ app.directive 'modalDialog', ['ngModalDefaults', (ngModalDefaults) ->
   replace: true
   transclude: true
   link: (scope, element, attrs) ->
-    scope.closeButtonHtml = ngModalDefaults.closeButtonHtml
+    setupCloseButton = ->
+      scope.closeButtonHtml = ngModalDefaults.closeButtonHtml
+
+    setupStyle = ->
+      scope.dialogStyle = {}
+      scope.dialogStyle['width'] = attrs.width if attrs.width
+      scope.dialogStyle['height'] = attrs.height if attrs.height
+
     scope.hideModal = ->
       scope.showOn = false
+
+    setupCloseButton()
+    setupStyle()
 
   template: """
               <div class='ng-modal' ng-show='showOn'>
                 <div class='ng-modal-overlay' ng-click='hideModal()'></div>
-                <div class='ng-modal-dialog-container'>
-                  <div class='ng-modal-dialog'>
-                    <div class='ng-modal-close' ng-click='hideModal()'>
-                      <div ng-bind-html-unsafe='closeButtonHtml'></div>
-                    </div>
-                    <div class='ng-modal-dialog-content' ng-transclude></div>
+                <div class='ng-modal-dialog' ng-style='dialogStyle'>
+                  <div class='ng-modal-close' ng-click='hideModal()'>
+                    <div ng-bind-html-unsafe='closeButtonHtml'></div>
                   </div>
+                  <div class='ng-modal-dialog-content' ng-transclude></div>
                 </div>
               </div>
             """
