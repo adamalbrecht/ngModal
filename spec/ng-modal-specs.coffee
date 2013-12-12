@@ -15,7 +15,7 @@ describe "ngModal", ->
       it 'is hidden by default since shown is false'
       describe 'and the shown variable is set to true', ->
         beforeEach ->
-          $scope.shwon = true
+          $scope.shown = true
 
         it 'is displayed'
         it 'is hidden when the close button is clicked'

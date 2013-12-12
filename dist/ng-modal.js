@@ -4,23 +4,25 @@
   app = angular.module("ngModal", []);
 
   app.provider("ngModalDefaults", function() {
-    this.options = {
-      closeButtonHtml: "<span class='ng-modal-close-x'>X</span>"
-    };
-    this.$get = function() {
-      return this.options;
-    };
-    return this.set = function(keyOrHash, value) {
-      var k, v, _results;
-      if (typeof keyOrHash === 'object') {
-        _results = [];
-        for (k in keyOrHash) {
-          v = keyOrHash[k];
-          _results.push(this.options[k] = v);
+    return {
+      options: {
+        closeButtonHtml: "<span class='ng-modal-close-x'>X</span>"
+      },
+      $get: function() {
+        return this.options;
+      },
+      set: function(keyOrHash, value) {
+        var k, v, _results;
+        if (typeof keyOrHash === 'object') {
+          _results = [];
+          for (k in keyOrHash) {
+            v = keyOrHash[k];
+            _results.push(this.options[k] = v);
+          }
+          return _results;
+        } else {
+          return this.options[keyOrHash] = value;
         }
-        return _results;
-      } else {
-        return this.options[keyOrHash] = value;
       }
     };
   });

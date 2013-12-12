@@ -11,13 +11,13 @@
 app = angular.module("ngModal", [])
 
 app.provider "ngModalDefaults", ->
-  @options = {
+  options: {
     closeButtonHtml: "<span class='ng-modal-close-x'>X</span>"
   }
-  @$get = ->
+  $get: ->
     @options
 
-  @set = (keyOrHash, value) ->
+  set: (keyOrHash, value) ->
     if typeof(keyOrHash) == 'object'
       for k, v of keyOrHash
         @options[k] = v
