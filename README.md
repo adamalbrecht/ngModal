@@ -77,4 +77,6 @@ Contributions are welcome. Whenever possible, please include test coverage with 
 
 To get the project running, you'll need [NPM](https://npmjs.org/) and [Bower](http://bower.io/). Run `npm install` and `bower install` to install all dependencies. Then run `grunt` in the project directory to watch and compile changes. And you can run `karma start` to watch for changes and auto-execute unit tests.
 
+## Potential Features Down the Road
 
+* Ability to integrate easily with [UI-Router](https://github.com/angular-ui/ui-router). This may be possible already, but it needs to be explored.
