@@ -28,7 +28,7 @@
   });
 
   app.directive('modalDialog', [
-    'ngModalDefaults', function(ngModalDefaults) {
+    'ngModalDefaults', '$sce', function(ngModalDefaults, $sce) {
       return {
         restrict: 'E',
         scope: {
@@ -40,7 +40,7 @@
         link: function(scope, element, attrs) {
           var setupCloseButton, setupStyle;
           setupCloseButton = function() {
-            return scope.closeButtonHtml = ngModalDefaults.closeButtonHtml;
+            return scope.closeButtonHtml = $sce.trustAsHtml(ngModalDefaults.closeButtonHtml);
           };
           setupStyle = function() {
             scope.dialogStyle = {};
@@ -64,7 +64,7 @@
           setupCloseButton();
           return setupStyle();
         },
-        template: "<div class='ng-modal' ng-show='show'>\n  <div class='ng-modal-overlay' ng-click='hideModal()'></div>\n  <div class='ng-modal-dialog' ng-style='dialogStyle'>\n    <span class='ng-modal-title' ng-show='dialogTitle && dialogTitle.length' ng-bind='dialogTitle'></span>\n    <div class='ng-modal-close' ng-click='hideModal()'>\n      <div ng-bind-html-unsafe='closeButtonHtml'></div>\n    </div>\n    <div class='ng-modal-dialog-content' ng-transclude></div>\n  </div>\n</div>"
+        template: "<div class='ng-modal' ng-show='show'>\n  <div class='ng-modal-overlay' ng-click='hideModal()'></div>\n  <div class='ng-modal-dialog' ng-style='dialogStyle'>\n    <span class='ng-modal-title' ng-show='dialogTitle && dialogTitle.length' ng-bind='dialogTitle'></span>\n    <div class='ng-modal-close' ng-click='hideModal()'>\n      <div ng-bind-html='closeButtonHtml'></div>\n    </div>\n    <div class='ng-modal-dialog-content' ng-transclude></div>\n  </div>\n</div>"
       };
     }
   ]);
