@@ -28,7 +28,7 @@ app.directive 'modalDialog', ['ngModalDefaults', (ngModalDefaults) ->
   restrict: 'E'
   scope:
     show: '='
-    title: '@'
+    dialogTitle: '@'
   replace: true
   transclude: true
   link: (scope, element, attrs) ->
@@ -57,7 +57,7 @@ app.directive 'modalDialog', ['ngModalDefaults', (ngModalDefaults) ->
               <div class='ng-modal' ng-show='show'>
                 <div class='ng-modal-overlay' ng-click='hideModal()'></div>
                 <div class='ng-modal-dialog' ng-style='dialogStyle'>
-                  <span class='ng-modal-title' ng-bind='title'></span>
+                  <span class='ng-modal-title' ng-show='dialogTitle && dialogTitle.length' ng-bind='dialogTitle'></span>
                   <div class='ng-modal-close' ng-click='hideModal()'>
                     <div ng-bind-html-unsafe='closeButtonHtml'></div>
                   </div>

@@ -12,8 +12,9 @@
   </head>
   <body>
     <div ng-controller='DemoController'>
-      <modal-dialog show='modalShown' width='500px' height='90%' title='This is a modal'>
-        <a href='{{link}}'>This is a link to {{link}}</a>
+      <modal-dialog show='modalShown' width='500px' dialog-title='Modal Dialog Title'>
+        <p>This is some html content</p>
+        <img src='http://upload.wikimedia.org/wikipedia/commons/2/22/Turkish_Van_Cat.jpg' width='300px'/>
       </modal-dialog>
       <button ng-click='toggleModal()'>Toggle Modal</button>
       <br/>
