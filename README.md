@@ -8,7 +8,7 @@ ngModal is very simple [Angular.js](http://angularjs.org/) modal dialog directiv
 
 ## Download
 
-* [Version 1.0.0-alpha](https://github.com/adamalbrecht/ngModal/releases/download/v1.0.0-alpha/ng-modal.zip) - Compatible with Angular 1.0.x.
+* [Version 1.0.0-alpha](https://github.com/adamalbrecht/ngModal/archive/v1.0.0-alpha.zip) - Compatible with Angular 1.0.x.
 * Version 1.2 - Coming soon. Compatible with Angular 1.2.x
 
 ## The Basics
