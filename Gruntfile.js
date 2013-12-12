@@ -7,21 +7,21 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "spec/build/specs.js": ["spec/*.coffee"],
-          "build/ng-modal.js": ["src/*.coffee"]
+          "dist/ng-modal.js": ["src/*.coffee"]
         }
       }
     },
     uglify: {
       my_target: {
         files: {
-          "build/ng-modal.min.js": "build/ng-modal.js"
+          "dist/ng-modal.min.js": "dist/ng-modal.js"
         }
       }
     },
     less: {
       compile: {
         files: {
-          "build/ng-modal.css": ["src/ng-modal.less"]
+          "dist/ng-modal.css": ["src/ng-modal.less"]
         }
       }
     },

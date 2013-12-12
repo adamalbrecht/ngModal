@@ -3,7 +3,7 @@
   <head>
     <title>ngQuickDate Demo</title>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="build/ng-modal.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="dist/ng-modal.css" media="all" />
     <style type='text/css'>
       body{font-family:'Helvetica Neue',Helvetica,sans-serif}
       h1 { padding: 0; margin: 0; }
@@ -20,12 +20,9 @@
       <br/>
       <br/>
       <p>Shown? {{modalShown}}</p>
-      <div style='height:3000px; padding: 10px; margin: 20px; border: solid 1px red;'>
-        This is a really tall div!
-      </div>
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <script type="text/javascript" src="build/ng-modal.js"></script>
+    <script type="text/javascript" src="dist/ng-modal.js"></script>
     <script type='text/javascript'>
       app = angular.module('ngModalDemo', ['ngModal']);
       app.config(function(ngModalDefaultsProvider) {
