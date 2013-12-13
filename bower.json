@@ -1,11 +1,18 @@
 {
   "name": "ngModal",
-  "version": "1.2.0-alpha",
-  "main": "build/src/ng-modal.js",
+  "version": "1.2.0-alpha.1",
+  "main": ["dist/ng-modal.js", "dist/ng-modal.css"]
   "ignore": [
-    ".jshintrc",
-    "**/*.txt",
-    "demo"
+    "bower_components",
+    "node_modules",
+    "spec",
+    "src",
+    "vendor",
+    "demo.html",
+    "Gruntfile.js",
+    "karma.conf.coffee",
+    "package.json",
+    "screenshot.png"
   ],
   "dependencies": {},
   "devDependencies": {
