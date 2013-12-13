@@ -1,6 +1,6 @@
 {
-  "name": "ngQuickDate",
-  "version": "1.0.0-alpha",
+  "name": "ngModal",
+  "version": "1.0.0-alpha.3",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-coffee": "~0.7",
