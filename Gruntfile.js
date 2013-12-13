@@ -33,6 +33,13 @@ module.exports = function(grunt) {
           debounceDelay: 250,
         },
       }
+    },
+    zip: {
+      'package': {
+        cwd: 'dist/',
+        src: ['dist/*.js', 'dist/*.css'],
+        dest: 'dist/ng-modal.zip'
+      }
     }
   });
 
@@ -40,6 +47,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-zip');
 
   grunt.registerTask('default', ['coffee', 'uglify', 'less', 'watch']);
+  grunt.registerTask('package', ['coffee', 'uglify', 'less', 'zip']);
 };
