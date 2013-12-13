@@ -11,6 +11,20 @@ ngModal is very simple [Angular.js](http://angularjs.org/) modal dialog directiv
 * [Version 1.0.0-alpha.2](https://github.com/adamalbrecht/ngModal/archive/v1.0.0-alpha.2.zip) - Compatible with Angular 1.0.x.
 * [Version 1.2.0-alpha.2](https://github.com/adamalbrecht/ngModal/archive/v1.2.0-alpha.2.zip) - Compatible with Angular 1.2.x.
 
+You can also install the package using [Bower](http://bower.io).
+
+```sh
+bower install ngModal
+```
+
+Or add it to your bower.json file:
+
+```javascript
+dependencies: {
+  "ngModal": "~1.2.0"
+}
+```
+
 ## The Basics
 To use the library, add the JS file and CSS file, and then include the module in your app:
 
