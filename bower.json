@@ -1,8 +1,9 @@
 {
   "name": "ngModal",
-  "version": "1.2.0-alpha.3",
+  "version": "1.2.0",
   "main": ["dist/ng-modal.js", "dist/ng-modal.css"],
   "ignore": [
+    ".gitignore",
     "bower_components",
     "node_modules",
     "spec",
