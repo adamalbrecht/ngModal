@@ -5,7 +5,7 @@
 #
 # Source Code: https://github.com/adamalbrecht/ngModal
 #
-# Compatible with Angular 1.0.8
+# Compatible with Angular 1.2.x
 #
 
 app = angular.module("ngModal", [])
