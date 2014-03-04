@@ -29,6 +29,7 @@ app.directive 'modalDialog', ['ngModalDefaults', '$sce', (ngModalDefaults, $sce)
   scope:
     show: '='
     dialogTitle: '@'
+    onClose: '&?'
   replace: true
   transclude: true
   link: (scope, element, attrs) ->
@@ -48,6 +49,8 @@ app.directive 'modalDialog', ['ngModalDefaults', '$sce', (ngModalDefaults, $sce)
         document.getElementsByTagName("body")[0].style.overflow = "hidden";
       else
         document.getElementsByTagName("body")[0].style.overflow = "";
+      if (!newVal && oldVal) && scope.onClose?
+        scope.onClose()
     )
 
     setupCloseButton()

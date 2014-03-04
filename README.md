@@ -8,7 +8,7 @@ ngModal is very simple [Angular.js](http://angularjs.org/) modal dialog directiv
 
 ## Download
 
-* [Version 1.2.1](https://github.com/adamalbrecht/ngModal/archive/v1.2.1.zip) - Compatible with Angular 1.2.x.
+* [Version 1.2.2](https://github.com/adamalbrecht/ngModal/archive/1.2.2.zip) - Compatible with Angular 1.2.x.
 
 You can also install the package using [Bower](http://bower.io).
 
@@ -43,11 +43,12 @@ The directive itself is called *modal-dialog*. The only required attribute is `s
 
 There are a few options that be configured inline with attributes.
 
-| Option         | Default | Description                                           |
-| -------------- | ------- | ----------------------------------------------------- |
-| dialog-title   | null    | Title placed in the header of the modal dialog.       |
-| width          | 50%     | Width of the dialog. Can be specified in px or %.     |
-| height         | 50%     | Height of the dialog. Can be specified in px or %.    |
+| Option         | Default | Description                                                       |
+| -------------- | ------- | ----------------------------------------------------------------- |
+| dialog-title   | null    | Title placed in the header of the modal dialog.                   |
+| width          | 50%     | Width of the dialog. Can be specified in px or %.                 |
+| height         | 50%     | Height of the dialog. Can be specified in px or %.                |
+| on-close       | null    | Call a function when the dialog is closed. Ex: `on-close='foo()'` |
 
 **Example:**
 

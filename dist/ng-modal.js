@@ -33,7 +33,8 @@
         restrict: 'E',
         scope: {
           show: '=',
-          dialogTitle: '@'
+          dialogTitle: '@',
+          onClose: '&?'
         },
         replace: true,
         transclude: true,
@@ -56,9 +57,12 @@
           };
           scope.$watch('show', function(newVal, oldVal) {
             if (newVal && !oldVal) {
-              return document.getElementsByTagName("body")[0].style.overflow = "hidden";
+              document.getElementsByTagName("body")[0].style.overflow = "hidden";
             } else {
-              return document.getElementsByTagName("body")[0].style.overflow = "";
+              document.getElementsByTagName("body")[0].style.overflow = "";
+            }
+            if ((!newVal && oldVal) && (scope.onClose != null)) {
+              return scope.onClose();
             }
           });
           setupCloseButton();
