@@ -12,7 +12,7 @@ app = angular.module("ngModal", [])
 
 app.provider "ngModalDefaults", ->
   options: {
-    closeButtonHtml: "<span class='ng-modal-close-x'>X</span>"
+    closeButtonHtml: "<span class='ng-modal-close-x'>&times;</span>"
   }
   $get: ->
     @options
