@@ -43,17 +43,18 @@ The directive itself is called *modal-dialog*. The only required attribute is `s
 
 There are a few options that be configured inline with attributes.
 
-| Option         | Default | Description                                                       |
-| -------------- | ------- | ----------------------------------------------------------------- |
-| dialog-title   | null    | Title placed in the header of the modal dialog.                   |
-| width          | 50%     | Width of the dialog. Can be specified in px or %.                 |
-| height         | 50%     | Height of the dialog. Can be specified in px or %.                |
-| on-close       | null    | Call a function when the dialog is closed. Ex: `on-close='foo()'` |
+| Option           | Default | Description                                                       |
+| ---------------- | ------- | ----------------------------------------------------------------- |
+| dialog-title     | null    | Title placed in the header of the modal dialog.                   |
+| width            | 50%     | Width of the dialog. Can be specified in px or %.                 |
+| height           | 50%     | Height of the dialog. Can be specified in px or %.                |
+| on-close         | null    | Call a function when the dialog is closed. Ex: `on-close='foo()'` |
+| mantain-position | false   | It keeps dialog current position                                  |
 
 **Example:**
 
 ```html
-<modal-dialog show='dialogShown' dialog-title='My Dialog' height='400px' width='75%'>
+<modal-dialog show='dialogShown' dialog-title='My Dialog' height='400px' width='75%' mantain-position='true'>
   <p>Dialog content goes in here</p>
 </modal-dialog>
 ```

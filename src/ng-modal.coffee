@@ -30,6 +30,7 @@ app.directive 'modalDialog', ['ngModalDefaults', '$sce', (ngModalDefaults, $sce)
     show: '='
     dialogTitle: '@'
     onClose: '&?'
+    mantainPosition: '='
   replace: true
   transclude: true
   link: (scope, element, attrs) ->
@@ -45,10 +46,11 @@ app.directive 'modalDialog', ['ngModalDefaults', '$sce', (ngModalDefaults, $sce)
       scope.show = false
 
     scope.$watch('show', (newVal, oldVal) ->
-      if newVal && !oldVal
-        document.getElementsByTagName("body")[0].style.overflow = "hidden";
-      else
-        document.getElementsByTagName("body")[0].style.overflow = "";
+      if !scope.mantainPosition || scope.mantainPosition == ''
+        if newVal && !oldVal
+          document.getElementsByTagName("body")[0].style.overflow = "hidden";
+        else
+          document.getElementsByTagName("body")[0].style.overflow = "";
       if (!newVal && oldVal) && scope.onClose?
         scope.onClose()
     )
