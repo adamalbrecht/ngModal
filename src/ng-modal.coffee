@@ -41,9 +41,6 @@ app.directive 'modalDialog', ['ngModalDefaults', '$sce', (ngModalDefaults, $sce)
       scope.dialogStyle['width'] = attrs.width if attrs.width
       scope.dialogStyle['height'] = attrs.height if attrs.height
 
-    scope.hideModal = ->
-      scope.show = false
-
     scope.$watch('show', (newVal, oldVal) ->
       if newVal && !oldVal
         document.getElementsByTagName("body")[0].style.overflow = "hidden";
@@ -58,10 +55,10 @@ app.directive 'modalDialog', ['ngModalDefaults', '$sce', (ngModalDefaults, $sce)
 
   template: """
               <div class='ng-modal' ng-show='show'>
-                <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+                <div class='ng-modal-overlay' ng-click='show = !show'></div>
                 <div class='ng-modal-dialog' ng-style='dialogStyle'>
                   <span class='ng-modal-title' ng-show='dialogTitle && dialogTitle.length' ng-bind='dialogTitle'></span>
-                  <div class='ng-modal-close' ng-click='hideModal()'>
+                  <div class='ng-modal-close' ng-click='show = !show'>
                     <div ng-bind-html='closeButtonHtml'></div>
                   </div>
                   <div class='ng-modal-dialog-content' ng-transclude></div>
