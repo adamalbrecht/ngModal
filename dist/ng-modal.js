@@ -34,7 +34,8 @@
         scope: {
           show: '=',
           dialogTitle: '@',
-          onClose: '&?'
+          onClose: '&?',
+          mantainPosition: '='
         },
         replace: true,
         transclude: true,
@@ -56,10 +57,12 @@
             return scope.show = false;
           };
           scope.$watch('show', function(newVal, oldVal) {
-            if (newVal && !oldVal) {
-              document.getElementsByTagName("body")[0].style.overflow = "hidden";
-            } else {
-              document.getElementsByTagName("body")[0].style.overflow = "";
+            if (!scope.mantainPosition || scope.mantainPosition === '') {
+              if (newVal && !oldVal) {
+                document.getElementsByTagName("body")[0].style.overflow = "hidden";
+              } else {
+                document.getElementsByTagName("body")[0].style.overflow = "";
+              }
             }
             if ((!newVal && oldVal) && (scope.onClose != null)) {
               return scope.onClose();
