@@ -6,3 +6,4 @@ build
 spec/build
 ng-modal.zip
 dist/ng-modal.zip
+.idea/
